@@ -56,22 +56,22 @@ The Lunch App provides the following API endpoints:
 
 ### Restaurants
 
-- `GET /api/restaurants/` - Retrieve a list of all restaurants.
-- `POST /api/restaurants/` - Create a new restaurant.
-- `GET /api/restaurants/{id}/` - Retrieve details of a specific restaurant.
-- `PUT /api/restaurants/{id}/` - Update a specific restaurant.
-- `DELETE /api/restaurants/{id}/` - Delete a specific restaurant.
+- `GET /api/lunch/restaurants/` - Retrieve a list of all restaurants.
+- `POST /api/lunch/restaurants/` - Create a new restaurant.
+- `GET /api/lunch/restaurants/{id}/` - Retrieve details of a specific restaurant.
+- `PUT /api/lunch/restaurants/{id}/` - Update a specific restaurant.
+- `DELETE /api/lunch/restaurants/{id}/` - Delete a specific restaurant.
 
 ### Menus
 
-- `GET /api/menus/` - Retrieve a list of all menus.
-- `POST /api/menus/` - Create a new menu.
-- `GET /api/menus/{id}/` - Retrieve details of a specific menu.
-- `PUT /api/menus/{id}/` - Update a specific menu.
-- `DELETE /api/menus/{id}/` - Delete a specific menu.
-- `POST /api/menus/{id}/vote/` - Vote for a specific menu.
-- `GET /api/menus/voting-results/` - Retrieve the voting results for all menus.
-- `GET /api/menus/today-menu/` - Retrieve today's menu based on the highest number of votes.
+- `GET /api/lunch/menus/` - Retrieve a list of all menus.
+- `POST /api/lunch/menus/` - Create a new menu.
+- `GET /api/lunch/menus/{id}/` - Retrieve details of a specific menu.
+- `PUT /api/lunch/menus/{id}/` - Update a specific menu.
+- `DELETE /api/lunch/menus/{id}/` - Delete a specific menu.
+- `POST /api/lunch/menus/{id}/vote/` - Vote for a specific menu.
+- `GET /api/lunch/menus/voting-results/` - Retrieve the voting results for all menus.
+- `GET /api/lunch/menus/today-menu/` - Retrieve today's menu based on the highest number of votes.
 
 ### User
 
