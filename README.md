@@ -82,6 +82,9 @@ The Lunch App provides the following API endpoints:
 - `GET /api/user/me/` - Retrieve the authenticated user's details.
 - `PUT /api/user/me/` - Update the authenticated user's details.
 
+### Documentation
+You can also see and try all these endpoints in the SWAGGER documentation
+- `/api/doc/swagger/`
 ## Authentication
 
 The Lunch App uses JSON Web Tokens (JWT) for authentication. To access protected endpoints, include the JWT token in the `Authorization` header of the request using the format: `Bearer <token>`. Tokens can be obtained by authenticating with valid user credentials.
