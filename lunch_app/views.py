@@ -5,7 +5,7 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
-from rest_framework.versioning import NamespaceVersioning
+from rest_framework.versioning import AcceptHeaderVersioning
 
 from .models import Restaurant, Menu
 from .serializers import (
@@ -21,7 +21,7 @@ from .serializers import (
 class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
-    versioning_class = NamespaceVersioning
+    versioning_class = AcceptHeaderVersioning
 
 
 class MenuViewSet(viewsets.ModelViewSet):
@@ -29,7 +29,7 @@ class MenuViewSet(viewsets.ModelViewSet):
         date=date.today()
     )
     serializer_class = MenuSerializer
-    versioning_class = NamespaceVersioning
+    versioning_class = AcceptHeaderVersioning
 
     def create(self, request, *args, **kwargs):
         """
@@ -68,7 +68,7 @@ class MenuViewSet(viewsets.ModelViewSet):
         if self.action == "today_menu":
             return VotingResultSerializer
 
-        return MenuSerializer
+        return super().get_serializer_class()
 
     @action(detail=True, methods=["POST"], url_path="vote")
     def vote(self, request, pk=None):

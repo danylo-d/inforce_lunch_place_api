@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-from rest_framework.versioning import NamespaceVersioning
+from rest_framework.versioning import AcceptHeaderVersioning
 
 from .models import Restaurant, Menu
 
@@ -18,18 +18,18 @@ class UserSerializer(serializers.ModelSerializer):
             "username",
             "full_name",
         )
-        versioning_class = NamespaceVersioning
+        versioning_class = AcceptHeaderVersioning
 
 
 class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
         fields = "__all__"
-        versioning_class = NamespaceVersioning
+        versioning_class = AcceptHeaderVersioning
 
 
 class MenuSerializer(serializers.ModelSerializer):
-    versioning_class = NamespaceVersioning
+    versioning_class = AcceptHeaderVersioning
 
     class Meta:
         model = Menu
@@ -73,4 +73,4 @@ class VotingResultSerializer(MenuSerializer):
 
 
 class VoteSerializer(serializers.Serializer):
-    versioning_class = NamespaceVersioning
+    versioning_class = AcceptHeaderVersioning
